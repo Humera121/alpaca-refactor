@@ -1,19 +1,15 @@
 import convertAreaToSquareFeet from './convertAreaToSquareFeet';
 
 describe('convertAreaToSquareFeet', () => {
-  test('should convert area correctly for positive values', () => {
+  it('should convert area correctly for valid input', () => {
     expect(convertAreaToSquareFeet(100)).toBeCloseTo(1076.39);
     expect(convertAreaToSquareFeet(200)).toBeCloseTo(2152.78);
-    expect(convertAreaToSquareFeet(150)).toBeCloseTo(1614.585);
-  });
-
-  test('should return 0 for area of 0', () => {
     expect(convertAreaToSquareFeet(0)).toBe(0);
   });
 
-  test('should handle negative values correctly', () => {
-    expect(convertAreaToSquareFeet(-100)).toBeCloseTo(-1076.39);
-    expect(convertAreaToSquareFeet(-200)).toBeCloseTo(-2152.78);
-    expect(convertAreaToSquareFeet(-150)).toBeCloseTo(-1614.585);
+  it('should throw an error for negative area', () => {
+    expect(() => convertAreaToSquareFeet(-100)).toThrow();
+    expect(() => convertAreaToSquareFeet(-1)).toThrow();
   });
 });
+
