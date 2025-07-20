@@ -8,21 +8,16 @@ describe('calculateTotalCost', () => {
     expect(calculateTotalCost(0, 0)).toBe(0);
   });
 
-  it('throws error when paint or labor cost is negative', () => {
-    expect(() => calculateTotalCost(-100, 50)).toThrow();
-    expect(() => calculateTotalCost(100, -50)).toThrow();
-    expect(() => calculateTotalCost(-100, -50)).toThrow();
-  });
+   it('throws error when paint or labor cost is negative', () => {
+  expect(() => calculateTotalCost(-100, 50)).toThrow();
+  expect(() => calculateTotalCost(100, -50)).toThrow();
+  expect(() => calculateTotalCost(-100, -50)).toThrow();
+});
 });
 
 
-  test('should handle negative values correctly', () => {
-    expect(calculateTotalCost(-100, 50)).toBe(-50);
-    expect(calculateTotalCost(100, -50)).toBe(50);
-    expect(calculateTotalCost(-100, -50)).toBe(-150);
-  });
-
+ 
   test('should return 0 when both costs are 0', () => {
     expect(calculateTotalCost(0, 0)).toBe(0);
   });
-});
+
