@@ -1,1 +1,1 @@
-export { default } from "./calculateCanvasSize";
+import calculateCanvasSize from "./calculateCanvasSize";
