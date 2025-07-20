@@ -1,6 +1,11 @@
+// File: calculateCanvasSize.ts
 export default function calculateCanvasSize(
-  length: string,
-  width: string
-) {
-  return parseInt(length) * parseInt(width);
+  length: number,
+  width: number
+): number {
+  if (length <= 0 || width <= 0) {
+    throw new Error('Length and width must be positive numbers.');
+  }
+
+  return length * width;
 }
