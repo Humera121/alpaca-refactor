@@ -1,27 +1,20 @@
 import paintRequiredForMultipleCoats from './paintRequiredForMultipleCoats';
 
 describe('paintRequiredForMultipleCoats', () => {
-  test('should calculate paint required correctly for positive values', () => {
+  it('calculates paint required for valid input', () => {
     expect(paintRequiredForMultipleCoats(100, 10, 2)).toBe(20);
-    expect(paintRequiredForMultipleCoats(200, 20, 3)).toBe(30);
     expect(paintRequiredForMultipleCoats(150, 15, 4)).toBe(40);
   });
 
-  test('should return 0 for area of 0', () => {
-    expect(paintRequiredForMultipleCoats(0, 10, 2)).toBe(0);
+  it('throws error for zero or negative values', () => {
+    expect(() => paintRequiredForMultipleCoats(0, 10, 2)).toThrow();
+    expect(() => paintRequiredForMultipleCoats(100, 0, 2)).toThrow();
+    expect(() => paintRequiredForMultipleCoats(-100, 10, 2)).toThrow();
+    expect(() => paintRequiredForMultipleCoats(100, -10, 2)).toThrow();
+    expect(() => paintRequiredForMultipleCoats(100, 10, -2)).toThrow();
   });
 
-  test('should return 0 for coveragePerLiter of 0', () => {
-    expect(paintRequiredForMultipleCoats(100, 0, 2)).toBe(Infinity);
-  });
-
-  test('should handle negative values correctly', () => {
-    expect(paintRequiredForMultipleCoats(-100, 10, 2)).toBe(-20);
-    expect(paintRequiredForMultipleCoats(100, -10, 2)).toBe(-20);
-    expect(paintRequiredForMultipleCoats(100, 10, -2)).toBe(-20);
-  });
-
-  test('should handle coats of 0 correctly', () => {
-    expect(paintRequiredForMultipleCoats(100, 10, 0)).toBe(0);
+  it('throws error for non-integer coats', () => {
+    expect(() => paintRequiredForMultipleCoats(100, 10, 1.5)).toThrow();
   });
 });
