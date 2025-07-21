@@ -1,1 +1,1 @@
-import calculateCanvasSize from "./calculateCanvasSize";
+export { default } from "./calculateCanvasPerimeter";

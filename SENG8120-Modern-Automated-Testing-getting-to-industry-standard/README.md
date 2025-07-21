@@ -1,61 +1,28 @@
-# SENG8120 Modern Automated Testing 
+# Alpaca Paint Calculator
 
-Version: Alpaca
+A TypeScript-based paint estimation tool designed for modern automated testing practices.  
+This project has been refactored and tested to meet industry standards using TDD, strong validation, and modular code structure.
 
-## Purpose
+---
 
-This repository houses the code we require for examples and assignments.
+## Features
 
-## Repository Usage
+- Accurate calculation of:
+  - Canvas area, perimeter, and diagonal
+  - Paint required with multiple coats
+  - Paint cost and total job cost
+  - Time estimates for painting
+- Full input validation
+- Modular TypeScript architecture
+- Full test suite using Jest
 
-This repository will contain branches of code.
+---
 
-Please refer to your instructor's directions on how to use this repository.
+## Test Instructions
 
-## Branch Usage
-
-**Installing The Dependencies**
-
-You will need to install dependencies by using:
+Install dependencies:
 
 ```bash
 npm install
-```
 
-**Running The Project**
-
-To run the project, you must first build the project:
-
-```bash
-npm run build
-```
-
-followed by:
-
-```bash
-npm start
-```
-
-Note:  if you make a change in the production code, you must `build` & `start`.
-Otherwise, your changes will not be reflected.
-
-**Running The Tests**
-
-To run the tests, you can use
-
-```bash
-npm run test
-```
-
-To keep the tests running, you can use
-
-```bash
-npm run test -- --watch
-```
-
-To run a specific test, you can use
-
-```bash
-npm run test [my test name]
-```
 
